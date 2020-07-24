@@ -276,7 +276,7 @@ class ZeroMQBaseTransport(BaseTransport):
     connector_cls: ClassVar[Type[ZeroMQBaseConnector]]
 
     def __init__(self, authenticator, **kwargs):
-        loop = asyncio.get_running_loop()
+        loop = asyncio.get_event_loop()
         self._zap_server = None
         self._zap_task = None
         transport_opts = kwargs.pop('transport_opts', {})
